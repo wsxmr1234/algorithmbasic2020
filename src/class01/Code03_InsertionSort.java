@@ -35,6 +35,7 @@ public class Code03_InsertionSort {
 		// (int)(Math.random() * N) -> [0,N-1] 所有的整数，等概率返回一个
 		int[] arr = new int[(int) ((maxSize + 1) * Math.random())]; // 长度随机
 		for (int i = 0; i < arr.length; i++) {
+			// 减号的作用是为了能生成负数的值
 			arr[i] = (int) ((maxValue + 1) * Math.random()) - (int) (maxValue * Math.random());
 		}
 		return arr;

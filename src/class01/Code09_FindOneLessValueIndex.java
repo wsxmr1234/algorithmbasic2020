@@ -1,11 +1,7 @@
 package class01;
 
-public class Code06_BSAwesome {
-	/**
-	 * 局部最小问题
-	 * @param arr
-	 * @return
-	 */
+public class Code09_FindOneLessValueIndex {
+
 	public static int getLessIndex(int[] arr) {
 		if (arr == null || arr.length == 0) {
 			return -1; // no exist
@@ -30,6 +26,21 @@ public class Code06_BSAwesome {
 			}
 		}
 		return left;
+	}
+
+	public static void printArray(int[] arr) {
+		for (int i = 0; i != arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+	}
+
+	public static void main(String[] args) {
+		int[] arr = { 6, 5, 3, 4, 6, 7, 8 };
+		printArray(arr);
+		int index = getLessIndex(arr);
+		System.out.println("index: " + index + ", value: " + arr[index]);
+
 	}
 
 }

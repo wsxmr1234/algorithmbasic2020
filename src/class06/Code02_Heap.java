@@ -60,6 +60,7 @@ public class Code02_Heap {
 			while (left < heapSize) { // 如果有左孩子，有没有右孩子，可能有可能没有！
 				// 把较大孩子的下标，给largest
 				int largest = left + 1 < heapSize && arr[left + 1] > arr[left] ? left + 1 : left;
+				// 比较父节点的值和左右两子节点的值的大小，选出最大的索引
 				largest = arr[largest] > arr[index] ? largest : index;
 				if (largest == index) {
 					break;

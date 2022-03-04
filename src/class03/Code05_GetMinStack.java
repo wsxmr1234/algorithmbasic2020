@@ -41,6 +41,9 @@ public class Code05_GetMinStack {
 		}
 	}
 
+	/**
+	 * 方法二：两个栈，一个存数。一个存最小值。 两栈同步压栈和出栈
+	 */
 	public static class MyStack2 {
 		private Stack<Integer> stackData;
 		private Stack<Integer> stackMin;

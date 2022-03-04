@@ -31,7 +31,8 @@ public class Code02_PartitionAndQuickSort {
 	}
 
 	// arr[L...R] 玩荷兰国旗问题的划分，以arr[R]做划分值
-	// <arr[R] ==arr[R] > arr[R]
+	// <arr[R]在左边 ==arr[R]在中间 > arr[R]在右边
+	// 返回的是重新排列后，=arr[R]部分的左边界和右边界
 	public static int[] netherlandsFlag(int[] arr, int L, int R) {
 		if (L > R) { // L...R L>R
 			return new int[] { -1, -1 };
@@ -70,7 +71,7 @@ public class Code02_PartitionAndQuickSort {
 			return;
 		}
 		// L..R partition arr[R] [ <=arr[R] arr[R] >arr[R] ]
-		int M = partition(arr, L, R);
+		int M = partition(arr, L, R); // 每次process都会搞定一个M，以后这个M的位置就不在变化了。所以最终会搞定整个数组
 		process1(arr, L, M - 1);
 		process1(arr, M + 1, R);
 	}
@@ -88,6 +89,7 @@ public class Code02_PartitionAndQuickSort {
 	}
 
 	// arr[L...R] 排有序，快排2.0方式
+	// 一次搞定一批数。这些书就是在每次process中等于arr[r]的数
 	public static void process2(int[] arr, int L, int R) {
 		if (L >= R) {
 			return;
@@ -115,7 +117,7 @@ public class Code02_PartitionAndQuickSort {
 		if (L >= R) {
 			return;
 		}
-		swap(arr, L + (int) (Math.random() * (R - L + 1)), R);
+		swap(arr, L + (int) (Math.random() * (R - L + 1)), R); // 每次随机在数组中选一个数，与arr[R]交换，然后2.0.这就是3.0
 		int[] equalArea = netherlandsFlag(arr, L, R);
 		process3(arr, L, equalArea[0] - 1);
 		process3(arr, equalArea[1] + 1, R);

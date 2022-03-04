@@ -1,7 +1,12 @@
 package class02;
 
-public class Code02_EvenTimesOddTimes {
+import org.junit.Test;
 
+public class Code02_EvenTimesOddTimes {
+	/*
+	一个数组中有一种数出现了奇数次，其他数都出现了偶数次，怎么
+找到并打印这种数
+	 */
 	// arr中，只有一种数，出现奇数次
 	public static void printOddTimesNum1(int[] arr) {
 		int eor = 0;
@@ -12,6 +17,10 @@ public class Code02_EvenTimesOddTimes {
 	}
 
 	// arr中，有两种数，出现奇数次
+	/*
+	一个数组中有两种数出现了奇数次，其他数都出现了偶数次，怎么
+找到并打印这两种数
+	 */
 	public static void printOddTimesNum2(int[] arr) {
 		int eor = 0;
 		for (int i = 0; i < arr.length; i++) {
@@ -22,7 +31,7 @@ public class Code02_EvenTimesOddTimes {
 		// eor最右侧的1，提取出来
 		// eor :     00110010110111000
 		// rightOne :00000000000001000
-		int rightOne = eor & (-eor); // 提取出最右的1
+		int rightOne = eor & (-eor + 1); // 提取出最右的1
 		
 		
 		int onlyOne = 0; // eor'
@@ -36,7 +45,9 @@ public class Code02_EvenTimesOddTimes {
 		System.out.println(onlyOne + " " + (eor ^ onlyOne));
 	}
 
-	
+	/*
+	输出二进制中1的个数
+	 */
 	public static int bit1counts(int N) {
 		int count = 0;
 		
@@ -50,12 +61,13 @@ public class Code02_EvenTimesOddTimes {
 		
 		while(N != 0) {
 			int rightOne = N & ((~N) + 1);
-			count++;
+			count++;  // 个人觉得把这行代码和上一行调换比较好理解
 			N ^= rightOne;
 			// N -= rightOne
 		}
-		
-		
+
+
+
 		return count;
 		
 	}
@@ -80,4 +92,8 @@ public class Code02_EvenTimesOddTimes {
 
 	}
 
+	@Test
+	public void testBit1Count() {
+		System.out.println(bit1counts(2));
+	}
 }

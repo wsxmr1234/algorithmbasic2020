@@ -1,6 +1,19 @@
 package class04;
 
 public class Code02_SmallSum {
+	/**
+	 * 小和问题
+	 * 在一个数组中，一个数左边比它小的数的总和,叫数的小和,所有数的小和累加起来,叫数
+	 * 组小和。求数组小和。
+	 * 例子:[1,3,4,2,5]
+	 * 1左边比1小的数:没有
+	 * 3左边比3小的数:1
+	 * 4左边比4小的数:1、3
+	 * 左边比2小的数:1
+	 * 左边比5小的数:1,3,4,2
+	 * 所以数组的小和为1+1+3+1+1+3+4+2=16
+	 * 求数组中每一个元素的左边有多少个元素比该元素小，将所有个数相加
+	 */
 
 	public static int smallSum(int[] arr) {
 		if (arr == null || arr.length < 2) {
@@ -35,9 +48,9 @@ public class Code02_SmallSum {
 		int p2 = m + 1;
 		int res = 0;
 		while (p1 <= m && p2 <= r) {
-			res += arr[p1] < arr[p2] ? (r - p2 + 1) * arr[p1] : 0;
-			help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
-		}
+			res += arr[p1] < arr[p2] ? (r - p2 + 1) * arr[p1] : 0; // 只改这两行
+			help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++]; // 这里将arr[p1] <= arr[p2]改为arr[p1] < arr[p2]
+		}														// 因为只有左边小于右边才统计小和，所以改为只有当左边小于右边才先加左边的
 		while (p1 <= m) {
 			help[i++] = arr[p1++];
 		}

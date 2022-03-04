@@ -25,7 +25,7 @@ public class Code01_MergeSort {
 	}
 
 	public static void merge(int[] arr, int L, int M, int R) {
-		int[] help = new int[R - L + 1];
+		int[] help = new int[R - L + 1];  //辅助数组
 		int i = 0;
 		int p1 = L;
 		int p2 = M + 1;
@@ -51,20 +51,21 @@ public class Code01_MergeSort {
 		}
 		int N = arr.length;
 		// 步长
-		int mergeSize = 1;
+		int mergeSize = 1; // 当前有序的左组长度；一组是两倍的merge size
 		while (mergeSize < N) { // log N
 			// 当前左组的，第一个位置
-			int L = 0;
-			while (L < N) {
+			int L = 0; // L在每一次while循环中代表的是，各个左组的起始位置
+			while (L < N) {  // 这个while循环的作用是判断，当从当前的L到末尾的元素数量不足一个mergesize时，
+				// 不需要再进行下面merge的操作，因为他一定已经有序
 				if (mergeSize >= N - L) {
 					break;
 				}
 				int M = L + mergeSize - 1;
-				int R = M + Math.min(mergeSize, N - M - 1);
+				int R = M + Math.min(mergeSize, N - M - 1); // 如果从当前的M到末尾的数够一个mergesize,就是mergesize，不然就是余下的元素个数
 				merge(arr, L, M, R);
-				L = R + 1;
+				L = R + 1;  // 下一个左组第一个数的位置
 			}
-			// 防止溢出
+			// 尽管从逻辑上来看，加不加不影响。 但是加了可以防止int值溢出，造成不必要的错误。
 			if (mergeSize > N / 2) {
 				break;
 			}

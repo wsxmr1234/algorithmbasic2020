@@ -1,6 +1,10 @@
 package class04;
 
 public class Code03_ReversePair {
+	/**
+	 * 求一个数组中有多少个逆序对。
+	 * 本题可转变为求数组中每一个元素的左边有多少个元素比该元素大，将所有个数相加
+	 */
 
 	public static int reverPairNumber(int[] arr) {
 		if (arr == null || arr.length < 2) {
