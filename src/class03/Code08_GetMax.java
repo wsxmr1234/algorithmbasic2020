@@ -1,6 +1,11 @@
 package class03;
 
 public class Code08_GetMax {
+	/**
+	 * 用递归找数组内最大值
+	 * @param arr
+	 * @return
+	 */
 
 	// 求arr中的最大值
 	public static int getMax(int[] arr) {

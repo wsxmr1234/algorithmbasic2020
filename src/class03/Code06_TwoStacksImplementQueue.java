@@ -3,6 +3,11 @@ package class03;
 import java.util.Stack;
 
 public class Code06_TwoStacksImplementQueue {
+	/**
+	 * 用两个栈实现队列
+	 * 两个栈一个push栈，一个pop栈
+	 *
+	 */
 
 	public static class TwoStacksQueue {
 		public Stack<Integer> stackPush;

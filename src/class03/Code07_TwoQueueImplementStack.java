@@ -5,6 +5,10 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class Code07_TwoQueueImplementStack {
+	/**
+	 * 用两个队列实现栈
+	 * @param <T>
+	 */
 
 	public static class TwoQueueStack<T> {
 		public Queue<T> queue;

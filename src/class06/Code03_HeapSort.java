@@ -12,7 +12,7 @@ public class Code03_HeapSort {
 		}
 		// O(N*logN) 经典堆排序
 //		for (int i = 0; i < arr.length; i++) { // O(N)
-//			heapInsert(arr, i); // O(logN)
+//			heapInser t(arr, i); // O(logN)
 //		}
 		// O(N) 优化堆排序
 		for (int i = arr.length - 1; i >= 0; i--) {
@@ -29,7 +29,7 @@ public class Code03_HeapSort {
 
 	// arr[index]刚来的数，往上
 	public static void heapInsert(int[] arr, int index) {
-		while (arr[index] > arr[(index - 1) / 2]) {
+		while (arr[index] > arr[ (index - 1) / 2]) {
 			swap(arr, index, (index - 1) / 2);
 			index = (index - 1) / 2;
 		}

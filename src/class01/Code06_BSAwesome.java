@@ -3,6 +3,7 @@ package class01;
 public class Code06_BSAwesome {
 	/**
 	 * 局部最小问题
+	 * 数组无序，相邻数不等
 	 * @param arr
 	 * @return
 	 */

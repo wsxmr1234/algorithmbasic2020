@@ -1,7 +1,9 @@
 package class03;
 
 public class Code04_RingArray {
-
+/**
+ * 用数组实现固定大小的队列
+ */
 	public static class MyQueue {
 		private int[] arr;
 		private int pushi;// end

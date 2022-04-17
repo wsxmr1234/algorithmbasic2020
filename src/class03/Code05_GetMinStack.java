@@ -3,11 +3,19 @@ package class03;
 import java.util.Stack;
 
 public class Code05_GetMinStack {
+	/**
+	 * 实现一个栈，不仅能够完成普通栈的操作，还能以时间复杂度为O(1)完成返回当前栈中最
+	 * 小值的操作
+	 */
 
 	public static class MyStack1 {
 		private Stack<Integer> stackData;
 		private Stack<Integer> stackMin;
 
+		/*这种的和下面那种没什么区别，区别只在于向栈中压入一个数据时，如果这个数小
+		于或者等于最小栈的栈顶，则压入。
+		从栈中取出数时，
+		*/
 		public MyStack1() {
 			this.stackData = new Stack<Integer>();
 			this.stackMin = new Stack<Integer>();
